@@ -1,0 +1,3 @@
+# cuda-oxide demos cargo configuration
+# Build with: cargo oxide [subcommand]
+# See https://github.com/NVlabs/cuda-oxide for toolchain setup

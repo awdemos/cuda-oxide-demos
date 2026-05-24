@@ -1,0 +1,52 @@
+[workspace]
+resolver = "3"
+members = [
+    "01-hello-world/01a-basic-vecadd",
+    "01-hello-world/01b-closure-params",
+    "01-hello-world/01c-generic-kernel",
+    "01-hello-world/01d-cross-crate/lib",
+    "01-hello-world/01d-cross-crate/bin",
+    "02-ported-cuda-samples/02a-matrix-transpose",
+    "02-ported-cuda-samples/02b-reduction",
+    "02-ported-cuda-samples/02c-parallel-prefix-sum",
+    "02-ported-cuda-samples/02d-convolution-2d",
+    "02-ported-cuda-samples/02e-nbody",
+    "03-ml-inference/03a-mnist-mlp",
+    "03-ml-inference/03b-transformer-attention",
+    "03-ml-inference/03c-conv2d-im2col",
+    "03-ml-inference/03d-llm-kv-cache",
+    "04-scientific-computing/04a-heat-diffusion",
+    "04-scientific-computing/04b-wave-equation",
+    "04-scientific-computing/04c-monte-carlo-pi",
+    "04-scientific-computing/04d-spmv",
+    "04-scientific-computing/04e-conjugate-gradient",
+    "05-data-structures/05a-prefix-tree",
+    "05-data-structures/05b-bvh-raytracer",
+    "05-data-structures/05c-graph-traversal",
+    "05-data-structures/05d-sorting-networks",
+    "06-multi-gpu/06a-peer-access",
+    "06-multi-gpu/06b-nccl-wrapper",
+    "06-multi-gpu/06c-pipeline-parallel",
+    "07-ecosystem-integration/07a-ndarray-bridge",
+    "07-ecosystem-integration/07b-image-processing",
+    "07-ecosystem-integration/07c-random-numbers",
+    "07-ecosystem-integration/07d-serde-kernels",
+]
+
+[workspace.package]
+edition = "2024"
+authors = ["NVIDIA CORPORATION"]
+license = "Apache-2.0"
+repository = "https://github.com/NVlabs/cuda-oxide.git"
+
+[workspace.dependencies]
+cuda-device = { path = "../cuda-oxide/crates/cuda-device" }
+cuda-host   = { path = "../cuda-oxide/crates/cuda-host" }
+cuda-core   = { path = "../cuda-oxide/crates/cuda-core" }
+cuda-async  = { path = "../cuda-oxide/crates/cuda-async" }
+anyhow   = "1.0"
+ndarray  = "0.16"
+image    = "0.25"
+rand     = "0.9"
+serde    = { version = "1.0", features = ["derive"] }
+tokio    = { version = "1", features = ["rt-multi-thread", "macros"] }

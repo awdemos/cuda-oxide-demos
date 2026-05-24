@@ -1,0 +1,23 @@
+[package]
+name = "wave-equation"
+version = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[workspace.package]
+edition = "2024"
+authors = ["NVIDIA CORPORATION"]
+license = "Apache-2.0"
+repository = "https://github.com/NVlabs/cuda-oxide.git"
+
+[workspace.dependencies]
+cuda-device = { path = "../../../cuda-oxide/crates/cuda-device" }
+cuda-host   = { path = "../../../cuda-oxide/crates/cuda-host" }
+cuda-core   = { path = "../../../cuda-oxide/crates/cuda-core" }
+
+[dependencies]
+cuda-device = { workspace = true }
+cuda-host   = { workspace = true }
+cuda-core   = { workspace = true }
