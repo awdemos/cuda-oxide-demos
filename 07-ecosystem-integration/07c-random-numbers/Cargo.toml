@@ -6,8 +6,6 @@ authors.workspace = true
 license.workspace = true
 repository.workspace = true
 
-[workspace]
-
 [dependencies]
 cuda-device = { workspace = true }
 cuda-host   = { workspace = true }
