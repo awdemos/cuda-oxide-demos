@@ -1,3 +1,7 @@
 # cuda-oxide demos cargo configuration
 # Build with: cargo oxide [subcommand]
 # See https://github.com/NVlabs/cuda-oxide for toolchain setup
+
+# managed-by: awdemos-cargo-target-provision (appended [build] target-dir only)
+[build]
+target-dir = "/.cargo-targets/targets/cuda-oxide-demos/main/target"
